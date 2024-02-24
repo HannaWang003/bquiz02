@@ -8,7 +8,7 @@
 	<title>健康促進網</title>
 	<link href="./css/css.css" rel="stylesheet" type="text/css">
 	<script src="./js/jquery-1.9.1.min.js"></script>
-	<script src="./css/css.css"></script>
+	<script src="./js/js.js"></script>
 </head>
 
 <body>
@@ -18,9 +18,11 @@
 	<iframe name="back" style="display:none;"></iframe>
 	<div id="all">
 		<div id="title">
-			00 月 00 號 Tuesday | 今日瀏覽: 1 | 累積瀏覽: 36 </div>
-		<div id="title2">
-
+			00 月 00 號 Tuesday | 今日瀏覽: 1 | 累積瀏覽: 36 
+			<a href="index.php" style="float:right">回首頁</a>
+		</div>
+		<div id="title2" title="健康促進網 - 回首頁">
+<img src="./icon/02B01.jpg" alt="">
 		</div>
 		<div id="mm">
 			<div class="hal" id="lef">
