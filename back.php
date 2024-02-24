@@ -56,10 +56,10 @@ echo "<a href='?do=login'>會員登入</a>";
 $do=($_GET['do'])??"main";
 $file="./front/{$do}.php";
 if(file_exists($file)){
-	include "./front/{$do}.php";
+	include "./back/{$do}.php";
 }
 else{
-	include "./front/main.php";
+	include "./back/main.php";
 }
 						?>
 					</div>
