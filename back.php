@@ -30,11 +30,11 @@ include_once "./api/db.php";
 		</div>
 		<div id="mm">
 			<div class="hal" id="lef">
+				<a class="blo" href="?do=admin">帳號管理</a>
 				<a class="blo" href="?do=po">分類網誌</a>
-				<a class="blo" href="?do=news">最新文章</a>
-				<a class="blo" href="?do=pop">人氣文章</a>
-				<a class="blo" href="?do=know">講座訊息</a>
-				<a class="blo" href="?do=que">問卷調查</a>
+				<a class="blo" href="?do=news">最新文章管理</a>
+				<a class="blo" href="?do=know">講座訊息管理</a>
+				<a class="blo" href="?do=que">問卷管理</a>
 			</div>
 			<div class="hal" id="main">
 				<div>
@@ -44,7 +44,9 @@ include_once "./api/db.php";
 if(isset($_SESSION['acc'])){
 echo "歡迎,".$_SESSION['acc'];
 ?>
-,<button onclick="logout()">登出</button>
+<br>
+<button onclick="location.href='back.php'">管理</button>|
+<button onclick="logout()">登出</button>
 <?php
 }else{
 echo "<a href='?do=login'>會員登入</a>";
@@ -54,7 +56,7 @@ echo "<a href='?do=login'>會員登入</a>";
 					<div class="">
 						<?php
 $do=($_GET['do'])??"main";
-$file="./front/{$do}.php";
+$file="./back/{$do}.php";
 if(file_exists($file)){
 	include "./back/{$do}.php";
 }

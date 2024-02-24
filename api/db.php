@@ -87,13 +87,7 @@ elseif(is_numeric($id)){
 return $this->pdo->query($sql)->fetch(PDO::FETCH_ASSOC);
 }
 function del($id){
-    $sql="delete from `{$this->table}` ";
-if(is_array($id)){
-    $sql.=" where ".join(" && ",$this->a2s($id));
-}
-elseif(is_numeric($id)){
-    $sql.=" where `id`='{$id}'";
-}
+$sql = "delete from `$this->table` where `id` IN (".join(",",$id).")";
 return $this->pdo->exec($sql);
 }
 function q($sql){

@@ -43,8 +43,13 @@ include_once "./api/db.php";
 					<?php
 if(isset($_SESSION['acc'])){
 echo "歡迎,".$_SESSION['acc'];
+if($_SESSION['acc']=="admin"){
+	?>
+<br><button onclick="location.href='back.php'">管理</button>|
+	<?php
+}
 ?>
-,<button onclick="logout()">登出</button>
+<button onclick="logout()">登出</button>
 <?php
 }else{
 echo "<a href='?do=login'>會員登入</a>";
