@@ -49,7 +49,7 @@ function all($where='',$other=''){
     return $this->pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
 }
 function count($where="",$other=''){
-    $sql="select count(*) front `{$this->table}` ";
+    $sql="select count(*) from `{$this->table}` ";
     $sql=$this->sql_all($sql,$where,$other);
     return $this->pdo->query($sql)->fetchColumn();
 }
@@ -111,6 +111,7 @@ if(!isset($_SESSION['visited'])){
     }else{
         $Total->save(['total'=>1,'date'=>date('Y-m-d')]);
     }
-    $_SESSION['visited'];
+    $_SESSION['visited']=1;
 }
+
 ?>
