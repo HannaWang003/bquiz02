@@ -13,7 +13,7 @@ function to($url){
 class DB{
     //3 protected
 protected $table;
-protected $dsn="mysql:host=localhost;charset=utf8;dbname=db02";
+protected $dsn="mysql:host=localhost;charset=utf8;dbname=db15";
 protected $pdo;
 //construct
 function __construct($table){
@@ -100,5 +100,5 @@ function q($sql){
     return $this->pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
 }
 }
-
+$Total=new DB('total');
 ?>
