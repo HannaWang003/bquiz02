@@ -17,7 +17,7 @@
 	</div>
 	<div id="all">
 		<div id="title">
-			00 月 00 號 Tuesday | 今日瀏覽: 1 | 累積瀏覽: 36 
+			<?=date("m月d日 l")?> | 今日瀏覽: 1 | 累積瀏覽: 36 
 			<a href="index.php" style="float:right">回首頁</a>
 		</div>
 		<div id="title2" title="健康促進網 - 回首頁">
@@ -34,7 +34,7 @@
 			<div class="hal" id="main">
 				<div>
 					<marquee style="width:78%;">請民眾踴躍投稿電子報，讓電子報成為大家相互交流、分享的園地!詳見最新文章</marquee>
-					<span style="width:18%; display:inline-block;">
+					<span style="width:20%; display:inline-block;">
 						<a href="?do=login">會員登入</a>
 					</span>
 					<div class="">
