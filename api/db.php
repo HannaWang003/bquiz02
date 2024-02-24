@@ -101,4 +101,16 @@ function q($sql){
 }
 }
 $Total=new DB('total');
+
+//判斷瀏覽人次
+if(!isset($_SESSION['visited'])){
+    if($Total->count(['date'=>date("Y-m-d")])>0){
+        $total = $Total->find(['date'=>date("Y-m-d")]);
+        $total['total']++;
+        $Total->save($total);
+    }else{
+        $Total->save(['total'=>1,'date'=>date('Y-m-d')]);
+    }
+    $_SESSION['visited'];
+}
 ?>
