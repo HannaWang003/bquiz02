@@ -101,6 +101,7 @@ function q($sql){
 }
 }
 $Total=new DB('total');
+$User=new DB('user');
 
 //判斷瀏覽人次
 if(!isset($_SESSION['visited'])){
