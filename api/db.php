@@ -101,6 +101,7 @@ $this->pdo=new PDO($this->dsn,'root','');
     }
 }
 $Total=new DB('total');
+$User=new DB('user');
 if(!isset($_SESSION['visited'])){
  $total = $Total->count(['date'=>date("Y-m-d")]);
  if($total==0){
