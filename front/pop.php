@@ -20,6 +20,8 @@
         color:#eee;
         width:110%;
         padding:10px;
+        height:300px;
+        overflow:scroll;
     }
 </style>
 <div>目前位置:首頁 > 人氣文章區</div>
