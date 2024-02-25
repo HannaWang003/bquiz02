@@ -16,7 +16,7 @@ foreach($rows as $key=> $row){
     <td class="ct"><?=$key+1?></td>
     <td><?=$row['text']?></td>
     <td  class="ct"><?=$row['vote']?></td>
-    <td  class="ct">結果</td>
+    <td  class="ct"><a href='?do=result&id=<?=$row['id']?>'>結果</a></td>
     <td  class="ct">
 <?=(isset($_SESSION['acc']))?"<a href='?do=vote&id={$row['id']}'>參與投票</a>":"<a href='?do=login'>請先登入</a>"?>
 </td>

@@ -6,5 +6,5 @@ $subject=$Que->find($opt['subject_id']);
 $subject['vote']++;
 $Que->save($opt);
 $Que->save($subject);
-to('../index.php?do=que')
+to("../index.php?do=result&id={$subject['id']}");
 ?>
