@@ -87,9 +87,19 @@ elseif(is_numeric($id)){
 return $this->pdo->query($sql)->fetch(PDO::FETCH_ASSOC);
 }
 function del($id){
-$sql = "delete from `$this->table` where `id` IN (".join(",",$id).")";
+    $sql="delete from `{$this->table}` ";
+if(is_array($id)){
+    $sql.=" where ".join(" && ",$this->a2s($id));
+}
+elseif(is_numeric($id)){
+    $sql.=" where `id`='{$id}'";
+}
 return $this->pdo->exec($sql);
 }
+// function del($id){
+// $sql = "delete from `$this->table` where `id` IN (".join(",",$id).")";
+// return $this->pdo->exec($sql);
+// }
 function q($sql){
     return $this->pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
 }
@@ -98,6 +108,7 @@ $Total=new DB('total');
 $User=new DB('user');
 $News=new DB('news');
 $Que = new DB('que');
+$Good=new DB('good');
 //判斷瀏覽人次
 if(!isset($_SESSION['visited'])){
     if($Total->count(['date'=>date("Y-m-d")])>0){
