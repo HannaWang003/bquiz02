@@ -17,7 +17,7 @@ class DB
 {
     //3 protected
     protected $table;
-    protected $dsn = "mysql:host=localhost;charset=utf8;dbname=db02pr";
+    protected $dsn = "mysql:host=localhost;charset=utf8;dbname=db16";
     protected $pdo;
     //construct
     function __construct($table)
@@ -79,7 +79,7 @@ class DB
         if (isset($ary['id'])) {
             $sql = "update `$this->table` set ";
             $sql .= join(",", $this->a2s($ary));
-            $sql .= " where `id`='{$ary['id']}'";
+            $sql .= " where `id`=".$ary['id'];
         } else {
             $sql = "insert into `$this->table` ";
             $col = "(`" . join("`,`", array_keys($ary)) . "`)";
@@ -115,6 +115,7 @@ class DB
 }
 $Total = new DB('total');
 $User = new DB('user');
+$News = new DB('news');
 
 if (!isset($_SESSION['visited'])) {
     if ($Total->count(['date' => date("Y-m-d")]) > 0) {
