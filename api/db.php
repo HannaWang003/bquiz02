@@ -17,7 +17,7 @@ class DB
 {
     //3 protected
     protected $table;
-    protected $dsn = "mysql:host=localhost;charset=utf8;dbname=db16";
+    protected $dsn = "mysql:host=localhost;charset=utf8;dbname=db15";
     protected $pdo;
     //construct
     function __construct($table)
@@ -117,6 +117,7 @@ $Total = new DB('total');
 $User = new DB('user');
 $News = new DB('news');
 $Que=new DB('que');
+$Good=new DB('good');
 
 if (!isset($_SESSION['visited'])) {
     if ($Total->count(['date' => date("Y-m-d")]) > 0) {
